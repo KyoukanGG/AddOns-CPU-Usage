@@ -1039,7 +1039,7 @@ function CreateACUChartPanel (parent, w, h, name)
 	w = w or 800
 	h = h or 500
 
-	local f = CreateFrame ("frame", name, parent)
+	local f = CreateFrame ("frame", name, parent, BackdropTemplateMixin and "BackdropTemplate")
 	f:SetSize (w or 500, h or 400)
 	f:EnableMouse (true)
 	f:SetMovable (true)

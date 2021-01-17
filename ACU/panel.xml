@@ -2,7 +2,7 @@
 
 	<Script file="panel.lua"/>
 	
-	<Frame name="ACUPanelTemplate" virtual="true">
+	<Frame name="ACUPanelTemplate" virtual="true" inherits="BackdropTemplate">
 	
 		<Size x="100" y="100"/>
 	

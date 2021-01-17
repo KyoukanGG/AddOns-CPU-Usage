@@ -528,7 +528,7 @@ local tutorial_phrases = {
 	function ACU:CreateMainWindow()
 	
 		-- main frame
-		local f = CreateFrame ("frame", "ACUMainFrame", UIParent)
+		local f = CreateFrame ("frame", "ACUMainFrame", UIParent, BackdropTemplateMixin and "BackdropTemplate")
 		f:SetSize (780, 470)
 		f:SetPoint ("center", UIParent, "center")
 		f:EnableMouse (true)
@@ -750,7 +750,7 @@ local tutorial_phrases = {
 		chart.Graphic:SetBackdropBorderColor (0, 0, 0, 0)
 		
 		--table frame
-		local table_frame = CreateFrame ("frame", "ACUTableFrame", f)
+		local table_frame = CreateFrame ("frame", "ACUTableFrame", f, BackdropTemplateMixin and "BackdropTemplate")
 		table_frame:SetPoint ("topleft", f, "topleft", 10, -50)
 		table_frame:SetSize (765, 370)
 		table_frame:SetBackdrop ({bgFile = [[Interface\AddOns\ACU\background]], tileSize = 64, edgeFile = [[Interface\AddOns\ACU\border_2]], edgeSize = 16, insets = {left = 1, right = 1, top = 1, bottom = 1}})
@@ -835,7 +835,7 @@ local tutorial_phrases = {
 		local background2 = {1, 1, 1, 0.0}
 		
 		for i = 1, 16 do
-			local line = CreateFrame ("frame", "ACUTableFrameLine" .. i, table_frame)
+			local line = CreateFrame ("frame", "ACUTableFrameLine" .. i, table_frame, BackdropTemplateMixin and "BackdropTemplate")
 			local y = (i-0) * 21 * -1
 			line:SetPoint ("topleft", table_frame, "topleft", 5, y)
 			line:SetPoint ("topright", table_frame, "topright", -25, y)
@@ -968,7 +968,7 @@ local tutorial_phrases = {
 		table_frame:Hide()
 
 		--switch button
-		local switch_frames = CreateFrame ("button", "ACUSwapFramesButton", f)
+		local switch_frames = CreateFrame ("button", "ACUSwapFramesButton", f, BackdropTemplateMixin and "BackdropTemplate")
 		switch_frames:SetBackdrop ({bgFile = [[Interface\AddOns\ACU\background]], tileSize = 64, edgeFile = [[Interface\AddOns\ACU\border_2]], edgeSize = 16, insets = {left = 1, right = 1, top = 1, bottom = 1}})
 		switch_frames:SetBackdropColor (0, 0, 0, 0.4)
 		switch_frames:SetBackdropBorderColor (1, 1, 1, 1)
@@ -1022,7 +1022,7 @@ local tutorial_phrases = {
 			end
 		end
 		
-		local enable_disable = CreateFrame ("button", "ACUProfilerButton", f)
+		local enable_disable = CreateFrame ("button", "ACUProfilerButton", f, BackdropTemplateMixin and "BackdropTemplate")
 		enable_disable:SetBackdrop ({bgFile = [[Interface\AddOns\ACU\background]], tileSize = 64, edgeFile = [[Interface\AddOns\ACU\border_2]], edgeSize = 16, insets = {left = 1, right = 1, top = 1, bottom = 1}})
 		enable_disable:SetBackdropColor (0, 0, 0, 0.4)
 		enable_disable:SetBackdropBorderColor (1, 1, 1, 1)
@@ -1258,7 +1258,7 @@ local tutorial_phrases = {
 		--tutorial
 		local got_tutorial = ACU.db.profile.first_run
 		if (not got_tutorial) then
-			local t = CreateFrame ("frame", "ACUProfilerTutorial", f)
+			local t = CreateFrame ("frame", "ACUProfilerTutorial", f, BackdropTemplateMixin and "BackdropTemplate")
 			t:SetSize (500, 300)
 			t:SetPoint ("center", f, "center")
 			t:SetFrameLevel (f:GetFrameLevel()+15)
@@ -1281,7 +1281,7 @@ local tutorial_phrases = {
 			end
 			desc_text:SetText (l)
 			
-			local close = CreateFrame ("button", "ACUProfilerTutorialClose", t)
+			local close = CreateFrame ("button", "ACUProfilerTutorialClose", t, BackdropTemplateMixin and "BackdropTemplate")
 			close:SetBackdrop ({bgFile = [[Interface\AddOns\ACU\background]], tileSize = 64, edgeFile = [[Interface\AddOns\ACU\border_2]], edgeSize = 16, insets = {left = 1, right = 1, top = 1, bottom = 1}})
 			close:SetBackdropColor (0, 0, 0, 0.4)
 			close:SetBackdropBorderColor (1, 1, 1, 1)
@@ -1321,7 +1321,7 @@ local tutorial_phrases = {
 	end
 
 	-- ~capture
-		local on_capturing_screen = CreateFrame ("frame", "ACUProfilerCaptureScreen", UIParent)
+		local on_capturing_screen = CreateFrame ("frame", "ACUProfilerCaptureScreen", UIParent, BackdropTemplateMixin and "BackdropTemplate")
 		on_capturing_screen:Hide()
 		on_capturing_screen:SetFrameStrata ("TOOLTIP")
 		on_capturing_screen:SetSize (205, 65)
